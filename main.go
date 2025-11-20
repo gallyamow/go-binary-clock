@@ -34,12 +34,12 @@ func (b *binTime) String() string {
 // pointDisplay represents time in 24-hours format
 type pointDisplay struct {
 	color string
-	h1    [2]bool // 0-2
-	h2    [4]bool // 0-8
-	m1    [3]bool // 0-4
-	m2    [4]bool // 0-8
-	s1    [3]bool // 0-3
-	s2    [4]bool // 0-8
+	h1    [2]bool // [0-3]
+	h2    [4]bool // [0-15]
+	m1    [3]bool // [0-7]
+	m2    [4]bool // [0-15]
+	s1    [3]bool // [0-7]
+	s2    [4]bool // [0-15]
 }
 
 func newPointDisplay(color string) *pointDisplay {
@@ -59,8 +59,8 @@ func (d *pointDisplay) applyTime(b *binTime) {
 
 	// способ через сдвиг и &1
 	d.m1[0] = b.m1>>0&1 == 1
-	d.m1[1] = b.m1>>1&1 == 2
-	d.m1[2] = b.m1>>2&1 == 4
+	d.m1[1] = b.m1>>1&1 == 1
+	d.m1[2] = b.m1>>2&1 == 1
 
 	d.m2[0] = b.m2&1 == 1
 	d.m2[1] = b.m2&2 == 2
