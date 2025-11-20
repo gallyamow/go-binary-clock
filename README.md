@@ -6,10 +6,9 @@ This program displays the current time in the terminal as a binary clock.
 
 ```shell
 go run ./main.go
-./clock
 ```
 
-<img width="145" height="92" alt="screenshoot" src="https://github.com/user-attachments/assets/bd97af4f-6be4-4cd7-a06e-c5064be756e2" />
+<img width="188" height="143" alt="image" src="https://github.com/user-attachments/assets/64069a7b-7684-48f3-8290-ee29ca85118d" />
 
 ## See
 
